@@ -6,7 +6,10 @@
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const current = await response.json();
     if (!/^index-r\d+-archivo\.html$/.test(current.file)) throw new Error('Revisión no válida');
-    const url = new URL(current.file, location.href);
+    const country=new URLSearchParams(location.search).get('pais');
+    const selected=country==='sv' && current.countries?.sv ? current.countries.sv : current.file;
+    if(!/^(index-r\d+-archivo|es-v\d+)\.html$/.test(selected))throw new Error('País no válido');
+    const url = new URL(selected, location.href);
     const params = new URLSearchParams(location.search);
     // A previously shared model parameter must not pin the fixed link to an old model.
     params.delete('model');
