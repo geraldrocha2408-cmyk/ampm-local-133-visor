@@ -41,7 +41,7 @@ box(.45,.14,.40,4.63,.83,10.22,white);cyl(.025,.2,4.78,.97,10.22,metal);
 for(let x of [3.5025,4.7275])box(.325,H,.1,x,H/2,3.26,white,walls);
 box(.9,.6,.1,4.115,2.4,3.26,white,walls);
 function door(w,x,z,rot,mat=glass){let g=new THREE.Group();g.position.set(x,0,z);g.rotation.y=rot;doors.add(g);box(w,2.1,.028,w/2,1.05,0,mat,g);for(let px of [0,w])box(.035,2.13,.04,px,1.065,0,metal,g);for(let y of [.02,2.1])box(w,.035,.04,w/2,y,0,metal,g);box(.025,.45,.025,w-.12,1.08,-.065,metal,g);return g;}
-const miniDoor=door(.8,3.29,1.205,0,wood); // opens from wall x3.29 toward room x2.49
+const miniDoor=door(.8,3.29,1.205,0,wood); // opens outward into corridor, from x3.29 toward x4.09
 const entryGlass=door(.9,3.665,3.26,0);
 const bathDoor=door(.65,3.40,10.64,0,wood);
 const frontDoor=door(.98,3.34,0,0,wood);
