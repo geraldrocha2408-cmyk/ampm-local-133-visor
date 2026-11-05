@@ -110,7 +110,7 @@ box(.65,1.78,.65,0,.89,0,metal,fridgeGroup);
 box(.63,1.10,.025,0,1.22,.337,M('#adb0aa'),fridgeGroup);
 box(.63,.61,.025,0,.35,.337,M('#adb0aa'),fridgeGroup);
 box(.03,.48,.035,-.26,1.13,.37,black,fridgeGroup);
-function placeFridge(){let atWindow=document.querySelector('#fridgePlacement').value==='window';fridgeGroup.position.set(atWindow?1.10:.355,0,atWindow?10.29:9.54);fridgeGroup.rotation.y=atWindow?Math.PI:Math.PI/2;resize();}
+function placeFridge(){let atWindow=document.querySelector('#fridgePlacement').value==='window';fridgeGroup.position.set(.355,0,atWindow?10.29:9.54);fridgeGroup.rotation.y=atWindow?Math.PI:Math.PI/2;kitchen.position.x=atWindow?1.305:2.05;resize();}
 // Meeting room: oval brown table, six chairs, 55-inch display on left wall.
 const meetingTop=cyl(1,.045,1.35,.75,1.65,M('#71503a',{map:tex('wood')}));meetingTop.scale.set(.50,1,1.00);
 for(let z of [1.12,2.18]){cyl(.09,.68,1.35,.36,z,black);box(.46,.035,.36,1.35,.035,z,black);}
